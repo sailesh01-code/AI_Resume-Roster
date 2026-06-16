@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&family=Geist:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: "Geist", "Inter", sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-soft: var(--accent-soft);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+
+  --radius-card: 20px;
+  --radius-pill: 999px;
+}
+
+:root,
+[data-theme="light"] {
+  --bg: #f6f5f9;
+  --surface: #ffffff;
+  --surface-2: #faf9fc;
+  --border: rgba(99, 75, 164, 0.08);
+  --ink: #1a1625;
+  --ink-muted: #6e6b7b;
+  --accent: #7c5cfc;
+  --accent-strong: #5a3dd6;
+  --accent-soft: #eeebff;
+  --accent-hero: #2d1b69;
+  --accent-hero-2: #3d2b7a;
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --cyan: #06b6d4;
+  --shadow-card: 0 1px 3px rgba(99, 75, 164, 0.06),
+    0 1px 2px rgba(99, 75, 164, 0.04);
+  --shadow-hover: 0 8px 28px rgba(99, 75, 164, 0.10),
+    0 2px 8px rgba(99, 75, 164, 0.06);
+}
+
+[data-theme="dark"] {
+  --bg: #0c0a14;
+  --surface: #14111f;
+  --surface-2: #1a1628;
+  --border: rgba(124, 92, 252, 0.10);
+  --ink: #f0eef6;
+  --ink-muted: #9a96a8;
+  --accent: #a78bfa;
+  --accent-strong: #c4b5fd;
+  --accent-soft: rgba(167, 139, 250, 0.12);
+  --accent-hero: #1a1040;
+  --accent-hero-2: #251a52;
+  --success: #34d399;
+  --warning: #fbbf24;
+  --danger: #f87171;
+  --cyan: #22d3ee;
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-hover: 0 8px 28px rgba(124, 92, 252, 0.12),
+    0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "cv11", "ss01";
+}
+
+* {
+  border-color: var(--border);
+}
+
+.shadow-card {
+  box-shadow: var(--shadow-card);
+}
+.shadow-hover {
+  box-shadow: var(--shadow-hover);
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(124, 92, 252, 0.12);
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(124, 92, 252, 0.24);
+  background-clip: content-box;
+}
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: rgba(167, 139, 250, 0.14);
+  background-clip: content-box;
+}
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background: rgba(167, 139, 250, 0.28);
+  background-clip: content-box;
+}
+
+/* Micro-animation keyframes */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; transform: scale(0.92); }
+  50% { opacity: 1; transform: scale(1.08); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2.8s ease-in-out infinite;
+}
+.animate-shimmer {
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+.animate-gradient {
+  background-size: 300% 300%;
+  animation: gradient-shift 4s ease infinite;
+}
