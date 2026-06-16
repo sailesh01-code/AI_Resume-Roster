@@ -1,4 +1,4 @@
-<![CDATA[<div align="center">
+<div align="center">
 
 <!-- Animated Header -->
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:7c5cfc,50:a78bfa,100:06b6d4&height=220&section=header&text=AI%20Resume%20Roster&fontSize=52&fontColor=ffffff&fontAlignY=35&desc=Beat%20the%20ATS.%20Land%20More%20Interviews.&descSize=18&descAlignY=55&descColor=ffffffcc&animation=fadeIn" width="100%" alt="AI Resume Roster" />
@@ -114,36 +114,36 @@
 
 ```mermaid
 graph TB
-    subgraph Client ["🖥️ Frontend (React 19 + Vite 8)"]
-        UI[UI Components] --> RQ[TanStack React Query]
-        RQ --> AX[Axios HTTP Client]
+    subgraph Client["Frontend - React 19 + Vite 8"]
+        UI["UI Components"] --> RQ["TanStack React Query"]
+        RQ --> AX["Axios HTTP Client"]
     end
     
-    subgraph Server ["⚙️ Backend (Express 5)"]
-        RT[Routes] --> MW[Middleware]
-        MW --> |Auth| JWT[JWT Verify]
-        MW --> |Validate| ZOD[Zod Schemas]
-        MW --> |Upload| MUL[Multer]
-        RT --> SVC[Services]
-        SVC --> GEM[Gemini AI Service]
-        SVC --> PDF[PDF Parse Service]
-        SVC --> DIFF[Diff Service]
+    subgraph Server["Backend - Express 5"]
+        RT["Routes"] --> MW["Middleware"]
+        MW --> JWT["JWT Verify"]
+        MW --> ZOD["Zod Schemas"]
+        MW --> MUL["Multer Upload"]
+        RT --> SVC["Services"]
+        SVC --> GEM["Gemini AI Service"]
+        SVC --> PDF["PDF Parse Service"]
+        SVC --> DIFF["Diff Service"]
     end
     
-    subgraph Database ["🗄️ MongoDB"]
-        USR[(Users)]
-        RES[(Resumes)]
-        VER[(Resume Versions)]
-        ANA[(Analyses)]
+    subgraph Database["MongoDB"]
+        USR[("Users")]
+        RES[("Resumes")]
+        VER[("Resume Versions")]
+        ANA[("Analyses")]
     end
     
-    subgraph AI ["🤖 Google Gemini AI"]
-        PARSE[Structured Parsing]
-        SCORE[ATS Scoring]
-        REWRITE[Bullet Rewrites]
+    subgraph AI["Google Gemini AI"]
+        PARSE["Structured Parsing"]
+        SCORE["ATS Scoring"]
+        REWRITE["Bullet Rewrites"]
     end
     
-    AX -->|API Requests| RT
+    AX -->|"API Requests"| RT
     SVC --> USR
     SVC --> RES
     SVC --> VER
@@ -151,11 +151,6 @@ graph TB
     GEM --> PARSE
     GEM --> SCORE
     GEM --> REWRITE
-
-    style Client fill:#1e1b4b,stroke:#7c5cfc,color:#e0e7ff
-    style Server fill:#1e1b4b,stroke:#06b6d4,color:#e0e7ff
-    style Database fill:#1e1b4b,stroke:#22c55e,color:#e0e7ff
-    style AI fill:#1e1b4b,stroke:#a78bfa,color:#e0e7ff
 ```
 
 <br />
@@ -578,4 +573,3 @@ This project is for **educational and personal use**.
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:7c5cfc,50:a78bfa,100:06b6d4&height=120&section=footer" width="100%" alt="footer" />
 
 </div>
-]]>
